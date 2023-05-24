@@ -32,7 +32,7 @@ struct ContentView: View {
                 // We're going to go through the list of all messages and show them on the screen.
                 ForEach(messages, id: \.self) { message in
                     if message.contains("[USER]") {
-                        let newMessage = message.replacingOccurrences(of: "[USER]", with: "") //removes the [USER] tag from user messages
+                        let newMessage = message .replacingOccurrences(of: "[USER]", with: "") //removes the [USER] tag from user messages
                         
                         //UI for user message bubble
                         HStack {
