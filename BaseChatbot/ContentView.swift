@@ -25,7 +25,7 @@ struct ContentView: View {
             ScrollView {
                 // We're going to go through the list of all messages and show them on the screen.
                 ForEach(messages, id: \.self) { message in
-                    Text(message)
+                    if 
                     
                 }.rotationEffect(.degrees(180))
             }.rotationEffect(.degrees(180))
