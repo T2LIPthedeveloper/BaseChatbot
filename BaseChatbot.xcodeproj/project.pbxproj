@@ -13,6 +13,12 @@
 		4799C3FD2A077A0500AD0437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4799C3FC2A077A0500AD0437 /* Assets.xcassets */; };
 		4799C4002A077A0500AD0437 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4799C3FF2A077A0500AD0437 /* Preview Assets.xcassets */; };
 		4799C4072A077F8100AD0437 /* BotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799C4062A077F8100AD0437 /* BotResponse.swift */; };
+		47FDA2942A2F4D7A00A491DD /* ContentView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA2932A2F4D7A00A491DD /* ContentView1.swift */; };
+		47FDA2962A2F4D8400A491DD /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA2952A2F4D8400A491DD /* ContentView2.swift */; };
+		47FDA2982A2F4DEF00A491DD /* BotResponse1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA2972A2F4DEF00A491DD /* BotResponse1.swift */; };
+		47FDA29A2A2F4DF600A491DD /* BotResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA2992A2F4DF600A491DD /* BotResponse2.swift */; };
+		47FDA2A02A2F523A00A491DD /* ContentViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA29F2A2F523A00A491DD /* ContentViewTemplate.swift */; };
+		47FDA2A42A2F525400A491DD /* BotResponseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FDA2A32A2F525400A491DD /* BotResponseTemplate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		4799C3FC2A077A0500AD0437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4799C3FF2A077A0500AD0437 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4799C4062A077F8100AD0437 /* BotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotResponse.swift; sourceTree = "<group>"; };
+		47FDA2932A2F4D7A00A491DD /* ContentView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView1.swift; sourceTree = "<group>"; };
+		47FDA2952A2F4D8400A491DD /* ContentView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		47FDA2972A2F4DEF00A491DD /* BotResponse1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotResponse1.swift; sourceTree = "<group>"; };
+		47FDA2992A2F4DF600A491DD /* BotResponse2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotResponse2.swift; sourceTree = "<group>"; };
+		47FDA29F2A2F523A00A491DD /* ContentViewTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewTemplate.swift; sourceTree = "<group>"; };
+		47FDA2A32A2F525400A491DD /* BotResponseTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotResponseTemplate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +67,11 @@
 		4799C3F72A077A0400AD0437 /* BaseChatbot */ = {
 			isa = PBXGroup;
 			children = (
-				4799C3F82A077A0400AD0437 /* BaseChatbotApp.swift */,
+				47FDA29E2A2F506300A491DD /* Starter Code */,
 				4799C3FA2A077A0400AD0437 /* ContentView.swift */,
+				4799C3F82A077A0400AD0437 /* BaseChatbotApp.swift */,
+				47FDA29B2A2F4E5200A491DD /* 1 to 1 Decent */,
+				47FDA29C2A2F4E6900A491DD /* 1 to Random Decent */,
 				4799C3FC2A077A0500AD0437 /* Assets.xcassets */,
 				4799C3FE2A077A0500AD0437 /* Preview Content */,
 				4799C4062A077F8100AD0437 /* BotResponse.swift */,
@@ -70,6 +85,33 @@
 				4799C3FF2A077A0500AD0437 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47FDA29B2A2F4E5200A491DD /* 1 to 1 Decent */ = {
+			isa = PBXGroup;
+			children = (
+				47FDA2932A2F4D7A00A491DD /* ContentView1.swift */,
+				47FDA2972A2F4DEF00A491DD /* BotResponse1.swift */,
+			);
+			path = "1 to 1 Decent";
+			sourceTree = "<group>";
+		};
+		47FDA29C2A2F4E6900A491DD /* 1 to Random Decent */ = {
+			isa = PBXGroup;
+			children = (
+				47FDA2952A2F4D8400A491DD /* ContentView2.swift */,
+				47FDA2992A2F4DF600A491DD /* BotResponse2.swift */,
+			);
+			path = "1 to Random Decent";
+			sourceTree = "<group>";
+		};
+		47FDA29E2A2F506300A491DD /* Starter Code */ = {
+			isa = PBXGroup;
+			children = (
+				47FDA29F2A2F523A00A491DD /* ContentViewTemplate.swift */,
+				47FDA2A32A2F525400A491DD /* BotResponseTemplate.swift */,
+			);
+			path = "Starter Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FDA2942A2F4D7A00A491DD /* ContentView1.swift in Sources */,
 				4799C3FB2A077A0400AD0437 /* ContentView.swift in Sources */,
+				47FDA29A2A2F4DF600A491DD /* BotResponse2.swift in Sources */,
+				47FDA2982A2F4DEF00A491DD /* BotResponse1.swift in Sources */,
 				4799C3F92A077A0400AD0437 /* BaseChatbotApp.swift in Sources */,
+				47FDA2962A2F4D8400A491DD /* ContentView2.swift in Sources */,
+				47FDA2A02A2F523A00A491DD /* ContentViewTemplate.swift in Sources */,
+				47FDA2A42A2F525400A491DD /* BotResponseTemplate.swift in Sources */,
 				4799C4072A077F8100AD0437 /* BotResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

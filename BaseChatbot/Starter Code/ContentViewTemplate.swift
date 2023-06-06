@@ -8,7 +8,7 @@
 // THIS IS FOR THE BAD APP (STARTER APP)
 import SwiftUI
 
-struct ContentView: View {
+struct ContentViewTemplate: View {
     @State private var messageText = ""
     // the text currently inside our box
     @State var messages: [String] = ["[BOT]Welcome to the chatbot!"]
@@ -79,15 +79,15 @@ struct ContentView: View {
             //if the message is empty, we don't respond.
             messages.append("[USER]" + message)
             self.messageText = ""
-            messages.append("[BOT]" + getBotResponse(message: message))
+            messages.append("[BOT]" + getBotResponseTemplate(message: message))
         }
     }
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentViewTemplate_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentViewTemplate()
     }
 }
 
