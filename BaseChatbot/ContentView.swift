@@ -25,7 +25,7 @@ struct ContentView: View {
                     .bold()
                 Image(systemName: "bubble.right.fill")
                     .foregroundColor(.blue)
-                    .font(.system(size: 30))
+                    .font(.system(size: 28))
             }
             
             
