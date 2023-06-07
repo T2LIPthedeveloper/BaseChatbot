@@ -67,14 +67,14 @@
 		4799C3F72A077A0400AD0437 /* BaseChatbot */ = {
 			isa = PBXGroup;
 			children = (
-				47FDA29E2A2F506300A491DD /* Starter Code */,
 				4799C3FA2A077A0400AD0437 /* ContentView.swift */,
 				4799C3F82A077A0400AD0437 /* BaseChatbotApp.swift */,
+				4799C4062A077F8100AD0437 /* BotResponse.swift */,
+				47FDA29E2A2F506300A491DD /* Starter Code */,
 				47FDA29B2A2F4E5200A491DD /* 1 to 1 Decent */,
 				47FDA29C2A2F4E6900A491DD /* 1 to Random Decent */,
 				4799C3FC2A077A0500AD0437 /* Assets.xcassets */,
 				4799C3FE2A077A0500AD0437 /* Preview Content */,
-				4799C4062A077F8100AD0437 /* BotResponse.swift */,
 			);
 			path = BaseChatbot;
 			sourceTree = "<group>";

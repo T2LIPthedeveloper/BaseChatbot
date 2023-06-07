@@ -13,6 +13,7 @@ struct ContentView: View {
     // the text currently inside our box
     @State var messages: [String] = ["[BOT]Welcome to the chatbot!"]
     // the list of all messages in our chat
+    @State private var isFoodDiscussion: Bool = false
     
     
     var body: some View {
@@ -20,10 +21,11 @@ struct ContentView: View {
             //Our app header and probably an icon.
             HStack {
                 Text("Chatbot")
-                    .foregroundColor(.yellow)
+                    .font(.largeTitle)
+                    .bold()
                 Image(systemName: "bubble.right.fill")
-                    .foregroundColor(.yellow)
-                    .font(.system(size: 40))
+                    .foregroundColor(.blue)
+                    .font(.system(size: 30))
             }
             
             
@@ -32,30 +34,45 @@ struct ContentView: View {
                 // We're going to go through the list of all messages and show them on the screen.
                 ForEach(messages, id: \.self) { message in
                     if message.contains("USER") {
+                        let newMessage = message.replacingOccurrences(of: "[USER]", with: "")
                         HStack {
                             Spacer()
-                            Text(message)
-                                .foregroundColor(.yellow)
+                            Text(newMessage)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.blue.opacity(0.85))
+                                .cornerRadius(20)
+                                .padding(.horizontal)
+                                .padding(.bottom)
                         }
                     }
                     else {
+                        let newMessage = message
+                            .replacingOccurrences(of: "[BOT]", with: "")
+                            .replacingOccurrences(of: "[FOOD]", with: "")
+                            .replacingOccurrences(of: "[DONE]", with: "")
                         HStack {
-                            Text(message)
-                                .foregroundColor(.yellow)
+                            Text(newMessage)
+                                .padding()
+                                .foregroundColor(.black)
+                                .background(.gray.opacity(0.15))
+                                .cornerRadius(20)
+                                .padding(.horizontal)
+                                .padding(.bottom)
                             Spacer()
                         }
                     }
                     
                 }.rotationEffect(.degrees(180))
             }.rotationEffect(.degrees(180))
-                .background(Color.red)
             // rotates the text boxes inside, brings them to the bottom of the screen
             
             // Our text message box and send button
             HStack {
                 TextField("Type something!", text: $messageText)
                     .padding()
-                    .background(.white)
+                    .background(.gray.opacity(0.1))
+                    .cornerRadius(10)
                     .onSubmit {
                         // This is what happens when the text gets submitted!
                         sendMessage(message: messageText)
@@ -64,22 +81,43 @@ struct ContentView: View {
                     // sends a message to the chatbot
                     sendMessage(message: messageText)
                 } label: {
-                    Text("Send")
-                        .foregroundColor(.yellow)
+                    Image(systemName: "paperplane.fill")
+                        .font(.system(size: 35))
+                        .padding()
                     // This acts as your send button
                 }
             }
             .padding()
         }
-        .background(Color.black)
     }
     
     func sendMessage(message: String) {
         if !message.isEmpty {
             //if the message is empty, we don't respond.
-            messages.append("[USER]" + message)
-            self.messageText = ""
-            messages.append("[BOT]" + getBotResponse(message: message))
+            withAnimation {
+                messages.append("[USER]" + message) //adds a message to the list of messages
+                self.messageText = "" //resets the message box
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                // 1 second delay until the message gets sent, you don't need to worry about this for now.
+                withAnimation {
+                    if isFoodDiscussion == false {
+                        let botResponse = "[BOT]" + getBotResponse(message: message, messageList: messages)
+                        messages.append(botResponse)
+                        if botResponse.contains("[FOOD]") {
+                            isFoodDiscussion = true
+                        }
+                    }
+                    else {
+                        let botResponse = "[BOT]" + getFoodResponse(message: message, messageList: messages)
+                        messages.append(botResponse)
+                        if botResponse.contains("[DONE]") {
+                            isFoodDiscussion = false
+                        }
+                    }
+                    //adds a bot message to the list of messages
+                }
+            }
         }
     }
     
